@@ -1,0 +1,497 @@
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast and Robust: Task Sampling with Posterior and Diversity Synergies for Adaptive Decision-Makers in Randomized Environments</title>
+    <meta name="description" content="We've presented Clarity, a minimalist and elegant website template for AI research.">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="robots" content="all">
+    <meta content="en_EN" property="og:locale">
+    <meta content="website" property="og:type">
+    <meta content="https://shikun.io/projects/clarity" property="og:url">
+    <meta content="Clarity" property="og:title">
+    <meta content="Website Template for AI Research" property="og:description">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@your_twitter_id">
+    <meta name="twitter:description" content="Fast and Robust: Task Sampling with Posterior and Diversity Synergies for Adaptive Decision-Makers in Randomized Environments">
+    <meta name="twitter:image:src" content="assets/figures/clarity.png">
+    
+    <link rel="stylesheet" type="text/css" media="all" href="assets/stylesheets/main_free.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="clarity/clarity.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/foundation.min.css">
+    <link href="assets/fontawesome-free-6.6.0-web/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
+    <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+    <script src="assets/scripts/navbar.js"></script>  <!-- Comment to remove table of content. -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            "HTML-CSS": {
+              scale: 95,
+              fonts: ["Gyre-Pagella"],
+              imageFont: null,
+              undefinedFamily: "'Arial Unicode MS', cmbright"
+            },
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+              }
+          });
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          "HTML-CSS": {
+            scale: 95,
+            fonts: ["Gyre-Pagella"],
+            imageFont: null,
+            undefinedFamily: "'Arial Unicode MS', cmbright"
+          },
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          },
+          TeX: {
+            equationNumbers: { autoNumber: "AMS" },
+            Macros: {
+              bm: ["{\\boldsymbol{#1}}",1]
+            }
+          }
+        });
+      </script>
+      <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+    <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Title Page -->
+    <!-- Dark Theme Example: Change the background colour dark and change the following div "blog-title" into "blog-title white". -->
+    <div class="container blog" id="first-content" style="background-color: #E0E4E6;">
+        <!-- If you don't have a project cover: Change "blog-title" into "blog-title no-cover"  -->
+
+        <div class="blog-title no-cover">
+            <div class="blog-intro">
+                <div>
+                    <h1 class="title" style="width: 170%; margin-left: -35%">Fast and Robust: Task Sampling with Posterior and Diversity Synergies for Adaptive Decision-Makers in Randomized Environments</h1>
+                    <p class="author" style="margin-left: -3%; margin-top: 3%;">
+                        Yun Qu<sup>*</sup> <sup>1</sup>, Qi (Cheems) Wang<sup>*</sup> <sup>1</sup>, Yixiu Mao<sup>*</sup> <sup>1</sup>, Yiqin Lv<sup>1</sup>, and Xiangyang Ji<sup>1</sup>
+                    </p>
+                    <p class="author" style="padding-top: 0px;margin-left: -3%">
+                        <sup>*</sup> Equal Contribution 
+                        <sup>1</sup> Tsinghua University <br>
+                    </p>
+                    <p class="abstract"  style="width: 150%; margin-left: -20%">
+                        Task robust adaptation is a long-standing pursuit in sequential decision-making.
+Some risk-averse strategies, e.g., the conditional value-at-risk principle, are incorporated in domain randomization or meta reinforcement learning to prioritize difficult tasks in optimization, which demand costly intensive evaluations.
+The efficiency issue prompts the development of robust active task sampling to train adaptive policies, where risk-predictive models can surrogate policy evaluation. 
+This work characterizes robust active task sampling as a secret Markov decision process, posits theoretical and practical insights, and constitutes robustness concepts in risk-averse scenarios.
+Importantly, we propose an easy-to-implement method, referred to as Posterior and Diversity Synergized Task Sampling (PDTS), to accommodate fast and robust sequential decision-making.
+Extensive experiments show that PDTS unlocks the potential of robust active task sampling, significantly improves the zero-shot and few-shot adaptation robustness in challenging tasks, and even accelerates the learning process under certain scenarios. 
+                    </p>
+                    <!-- Using FontAwesome Pro -->
+                    <!-- <div class="info">
+                        <div>
+                            <a href="https://arxiv.org" class="button icon" style="background-color: rgba(255, 255, 255, 0.3)"> Paper <i class="far fa-book-open"></i></a> &nbsp;&nbsp; 
+                            <a href="https://github.com" class="button icon" style="background-color: rgba(255, 255, 255, 0.3)">Code <i class="far fa-code"></i></a>  &nbsp;&nbsp; 
+                            <a href="https://www.microsoft.com/en-gb/microsoft-365/powerpoint" class="button icon" style="background-color: rgba(255, 255, 255, 0.3);">Slides <i class="far fa-presentation"></i></a>  &nbsp;&nbsp; 
+                            <a href="https://huggingface.co/spaces" class="button icon" style="background-color: rgba(255, 255, 255, 0.3)">Demo <i class="fa-light fa-face-smiling-hands"></i></a>
+                        </div>
+                    </div> -->
+
+                    <!-- Using FontAwesome Free -->
+                    <div class="info">
+                        <div>
+                            <a href="https://arxiv.org" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)"> Paper <i class="fa-solid fa-book-open"></i></a> &nbsp;&nbsp; 
+                            <a href="https://github.com/thu-rllab/PDTS" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)">Code <i class="fa-solid fa-code"></i></a>  &nbsp;&nbsp; 
+                            <a href="https://www.microsoft.com/en-gb/microsoft-365/powerpoint" class="button icon" style="background-color: rgba(255, 255, 255, 0.2);">Slides <i class="fa-regular fa-file-powerpoint"></i></a> &nbsp;&nbsp; 
+                            <!-- <a href="https://huggingface.co/spaces/" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)">Demo <i class="fa-solid fa-laptop-code"></i></a>  -->
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="info">
+                    <p>ICML 2025</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="blog-cover">
+        <img class="foreground" src="clarity/images/overall performance.png" style="width: 60%; margin-left: 20%;">
+        <p class="text" style="width: 60%; margin-left: 20%; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+            The proposed PDTS demonstrates superior performance in both zero-shot and few-shot adaptive decision-making tasks, 
+            including Meta-RL, Physical DR, and Visual DR. 
+            Its advantages include (i) robust adaptation, 
+            (ii) accelerated training, 
+            (iii) improved OOD performance, 
+            (iv) better task difficulty discrimination, 
+            and (v) minimal additional cost.
+        </p>
+        <!-- <img class="background" src="assets/figures/clarity.png"> -->
+    </div>
+
+
+    <div class="container blog main first" id="blog-main" style="width: 50%; margin-left:-1%;">
+        <h1 >
+            Robust Active Task Sampling (RATS)
+        </h1>
+        <p class='text'>
+            <b>Efficient and Robust Adaptation.</b>
+            An existing challenge in DRL is effectively adapting policy to unseen but similar scenarios without learning from scratch.
+Simultaneously, adaptation robustness to worst-case scenarios is critical, as real-world failures can have serious consequences, such as robot damage or autonomous driving accidents.
+        </p>
+        </h1>
+        <p class='text'>
+            <b>Expensive Policy Evaluation.</b>
+            Traditional task robust optimization methods typically require exact task evaluation to prioritize challenging tasks
+             to optimize demands intensive and expensive policy evaluation in massive environments over iteration.
+            For example, $\text{CVaR}_\alpha$ selects $(1-\alpha)$ proportional worst tasks after exact evaluation to optimize.
+        </p>
+        <p class='text' style="margin-bottom: -20px;">
+            <b>Robust Active Task Sampling (RATS).</b>
+            We specify RATS paradigm, which slightly differs from traditional active learning purposes.
+            RATS is mainly incorporated into risk-averse learning with traits: 
+        </p>
+        <div style="margin-left: 30px; margin-top: 0px;">
+            <p class="text" style="margin-top: 0px; margin-bottom: -20px;"><b>(i)</b> active inference towards task difficulties with limited cost;</p>
+            <p class="text" style="margin-top: 0px; margin-bottom: 20px;"><b>(ii)</b> acquisition rules to select the subset from the pseudo task set to optimize for robustness.</p>
+        </div>
+        <img src="clarity/images/RATS.png" style="width: 80%;">
+        <p class="caption">
+            <b>General Framework of RATS in Risk-Averse Decision-Making.</b>
+            The pipeline involves amortized evaluation of task difficulties, 
+            robust subset selection, 
+            policy optimization in the MDP batch, 
+            and risk predictive models' update. [fire: updates; snow: evalluation].
+            Traditional methods rely on exact evaluation rather than amortized evaluation, resulting in substantial computational cost.
+        </p>
+        
+        <p class='text'>
+            <b>Model Predictive Task Sampling (MPTS, <a href="https://arxiv.org/pdf/2501.11039" target="_blank">wang2025beyond</a>).</b>
+            MPTS is a method of RATS.
+            It is the first work to observe that task risk $\ell$ is predictable and to design a risk prediction model $p(\ell\vert\bm\tau,H_{1:t};\bm\theta_{t})$ to surrogate expensive evaluation.
+            MPTS treats the optimization history as sequence generation and involves latent variables $\bm z_t$ to summarize batches of adaptation risk over iterations, which leads to:
+            \[
+  \begin{equation}
+  p(\mathcal{\bm L}_{0:T}^{\mathcal{B}},\bm z_{0:T}\vert\bm\theta_{0:T})
+            =p(\bm z_{0})\prod_{t=0}^{T}p(\mathcal{\bm L}^{\mathcal{B}}_{t}\vert\bm z_{t},\bm\theta_{t})\prod_{t=0}^{T-1}p(\bm z_{t+1}\vert\bm z_{t}),
+            \end{equation}
+  \]
+            with the evaluation risk batch $\mathcal{\bm L}^{\mathcal{B}}_{t}=\{(\bm\tau_{t,i},\ell_{t,i})\}_{i=1}^{\mathcal{B}}$.
+            With the Bayes rule and the streaming variational inference w.r.t. the Equation (1), it obtains the approximate evidence lower bound of the risk learner to maximize in each batch:
+            \[
+            \begin{equation}\max_{\bm\psi\in\bm\Psi,\bm\phi\in\bm\Phi} \mathcal{G}_{\text{ELBO}}(\bm\psi,\bm\phi) 
+            := \mathbb{E}_{q_{\bm\phi}(\bm z_{t}\vert H_{t})}\left[\sum_{i=1}^{\mathcal{B}}\ln p_{\bm\psi}(\ell_{t,i}\vert\bm\tau_{t,i},\bm z_{t})\right] \\
+             -\beta D_{KL}\Big[q_{\bm\phi}(\bm z_{t}\vert H_{t})\parallel q_{\bar{\bm\phi}}(\bm z_{t}\vert H_{t-1})\Big],
+             \end{equation}
+             \]
+            with $\bar{\bm\phi}$ the fixed conditioned prior from the last update  and $\beta\in\mathbb{R}^{+}$ the penalty weight.
+Then the amortized evaluation of adaptation performance is approximated as $p(\ell\vert\bm\tau,H_{1:t};\bm\theta_{t})\approx\mathbb{E}_{q_{\bm\phi}(\bm z_{t}\vert H_{t})}\left[p_{\bm\psi}(\ell\vert\bm\tau,\bm z_{t};\bm\theta_{t})\right]$ through Monte Carlo estimates.
+        </p>
+        
+        <img src="clarity/images/risklearner_structure.png">
+        <p class="caption">
+            <b>Illustration of the neural architecture of the risk predictive model in MPTS.</b>
+                The risk predictive model follows an encoder-decoder structure which encodes the batch ${[\tau_{t,i},\ell_{t,i}]}$ 
+                into a latent variable $z$ and then decodes it into predicted adaptation risks $\hat{\ell}_{t,i}$.
+                We reuse it in PDTS.
+        </p>
+
+        <h1 >
+            Posterior and Diversity Synergized Task Sampling (PDTS)
+        </h1>
+
+        <h2 >
+            1. Enable Robust Active Task Sampling with i-MABs.
+        </h2>
+        <p class='text'>
+            <b>Task Robust Episodic Learning as a MDP.</b> 
+            To provide a versatile theoretical tool to analyze RATS,
+            we specify task robust episodic learning as a secret MDP $\mathcal{M}=\langle\mathbf{S},\mathbf{A},\mathbf{P},\mathbf{R}\rangle$:
+        <div style="margin-left: 30px; margin-top: 0px;">
+            <p class="text" style="margin-top: -10px; margin-bottom: -20px;"><em>State Space:</em> The feasible machine learner's parameter, such as Meta-RL policies, i.e., $\mathbf{S}=\{\bm\theta\in\bm\Theta\}$;</p>
+            <p class="text" style="margin-top: 0px; margin-bottom: -20px;"><em>Action Space:</em> A collection of task subsets with cardinality constraints $\mathbf{A}_{t}=\{\mathcal{T}_{t}^{\mathcal{B}}\subseteq\mathcal{T}^{\hat{\mathcal{B}}}_{t}\ \text{with} \ |\mathcal{T}^{\mathcal{B}}_{t}|=\mathcal{B}\}$ in RATS or $\text{CVaR}_{\alpha}$ methods;</p>
+            <p class="text" style="margin-top: 0px; margin-bottom: -20px;"><em>Transition:</em> $p(\bm\theta_{t+1}\vert\bm\theta_{t},\mathcal{T}_{t+1}^{\mathcal{B}})\in\mathbf{P}$ conditioned on $\bm\theta_{t}$ and the action $\mathcal{T}_{t+1}^{\mathcal{B}}$ with the transited state (after-adaptation) $\bm\theta_{t+1}$;</p>
+            <p class="text" style="margin-top: 0px; margin-bottom: 0px;"><em>Reward:</em> Adaptation robustness improvement after state transitions.
+                With $\text{CVaR}_{\alpha}$ as a risk-averse measure, $R(\bm\theta_{t},\mathcal{T}_{t+1}^{\mathcal{B}}):=\text{CVaR}_{\alpha}(\bm\theta_{t})-\text{CVaR}_{\alpha}(\bm\theta_{t+1})$.</p>
+        </div>
+        </p>
+        
+        <p class='text'>
+            <b>From i-MABs to MPTS's Robustness Concept.</b>
+            We further simplify $\mathcal{M}$ into an infinite many-armed bandit (MAB) to enable an online search of the optimal subset.
+            The arm corresponds to a feasible subset $\mathcal{T}^{\mathcal{B}}_{t+1}\in\mathbf{A}_{t+1}$.
+            Our i-MAB is a theoretical model for inducing RATS methods, and MPTS can be viewed as a special case:
+        </p>
+        <div style="margin-left: 30px; margin-top: 0px;">
+            <p class="text" style="margin-top: 0px; margin-bottom: 0px;"><b>Proposition 3.2</b> (MPTS as a UCB-guided Solution to i-MABs)
+                <em>Executing MPTS pipeline is equivalent to approximately solving $\mathcal{M}$ with the i-MAB under the UCB principle.</em> 
+            </p>
+        </div>
+
+        
+        <h2 >
+            2. Refined Diversity Regularized Acquisition Function.
+        </h2>
+        
+        <p class='text'>
+            <b>Benefits of Enlarging $\hat{\mathcal{B}}$ in Subset Selection.</b>
+(i) it encourages exploration in the task space with more candidate subsets at no actual interaction cost;
+(ii) under high-risk prioritization rule, the optimization pipeline in RATS approximately executes $\text{CVaR}_{1-\frac{\mathcal{B}}{\hat{\mathcal{B}}}}$ in each iteration, i.e., worst-case optimization with $\hat{\mathcal{B}}\to\infty$.
+</p>
+        <p class="text">
+            <b>Sealed Exploration Potential in MPTS.</b>     
+Unfortunately, MPTS might encounter severe performance collapses with greater $\hat{\mathcal{B}}$ when $\hat{\mathcal{B}}=8\mathcal{B}$ without a remedy.
+Through both empirical and theoretical analysis, we find that it can be attributed to the selected subset's concentration in a narrow range.
+        </p>
+        
+        <img src="clarity/images/MPTS_fail.png" style="width: 70%;">
+        <p class="caption">
+            <b>MPTS's Performance Collapse with Greater $\hat{\mathcal{B}}$.</b>
+                We report the performance collapses of MPTS on Walker2dVel in the case $\hat{\mathcal{B}}=8\mathcal{B}$. The task sampling frequency reveals the presence of the concentration issue.
+        </p>
+        
+        <div style="margin-left: 30px; margin-top: 0px;">
+            <p class="text" style="margin-top: 0px; margin-bottom: 0px;"><b>Proposition 3.3</b> (Concentration Issue in Average Top-$\mathcal{B}$ Selection)
+                <em>Let $f(\bm{\tau}): \mathbb{R}^d\to\mathbb{R}$ be a unimodal and continuous function, where $d\in\mathbb{N}^+$ and $\bm{\tau}\in\mathbb{R}^d$, with a maximum value $f(\bm{\tau}^*)$ at $\bm{\tau}^*$.
+                    We uniformly sample a set of points $ \mathcal{T}^{\hat{\mathcal{B}}} = \{\bm{\tau}_i\}_{i=1}^{\hat{\mathcal{B}}}$, 
+                    where $\bm{\tau_i}$ are i.i.d. with a probability $p_\epsilon$ of falling within a $\epsilon$-neighborhood of $\bm{\tau^*}$ as $|f(\bm{\tau}) - f(\bm{\tau}^*)|\leq \epsilon$. 
+                    Following MPTS, we select the Top-$\mathcal{B}$ samples with the largest function values, i.e., 
+                    $$\small
+                    \mathcal{T}^{\mathcal{B}} = \text{Top-}\mathcal{B}(\mathcal{T}^{\hat{\mathcal{B}}}, f), \quad \hat{\mathcal{B}}, \mathcal{B} \in \mathbb{N}^+, \; \mathcal{B} \leq \hat{\mathcal{B}},$$
+
+                    For any $\epsilon>0$ such that $p_\epsilon<\frac{\hat{\mathcal{B}}-\mathcal{B}+2}{\hat{\mathcal{B}}+1}$, the concentration probability
+
+                    $$\small \mathbb{P}\left( |f(\bm{\tau}) - f(\bm{\tau}^*)| \leq \epsilon \ \vert\  \forall \bm{\tau} \in \mathcal{T}^{\mathcal{B}} \right)$$
+                    
+                    increases with $\hat{\mathcal{B}}$ and converges to 1 with $\hat{\mathcal{B}} \to \infty$.</em> 
+            </p>
+        </div>
+        <p class="text">
+            <b>Diversity Regularization & Robustness Concept.</b>     
+            Our strategy is to encourage the coverage of the task space during subset selection.
+            Specifically, rather than selecting individual candidate tasks based on their acquisition score, we evaluate task batches based on both adaptation risk and task diversities in the subset:
+            \[
+            \begin{equation}
+            \max_{\mathcal{T}^{\mathcal{B}}\subseteq\mathcal{T}^{\hat{\mathcal{B}}}:|\mathcal{T}^{\mathcal{B}}|=\mathcal{B}}\mathcal{A}(\mathcal{T}^{\mathcal{B}})+\gamma\mathcal{S}\left[\{d(\bm\tau_i,\bm\tau_j)\}\right]
+            \end{equation}
+  \]
+            where $\mathcal{S}$ measures the diversity of the subset $\mathcal{T}^{\mathcal{B}}$ from identifiers' pairwise distances, e.g., $\sum_{i,j}||\bm\tau_i-\bm\tau_j||_2^2$.
+        </p>
+        
+        <div style="margin-left: 30px; margin-top: 0px;">
+            <p class="text" style="margin-top: 0px; margin-bottom: 0px;"><b>Proposition 3.4</b> (Nearly Worst-Case Optimization with PDTS)
+                <em>When $\hat{\mathcal{B}}$ grows large enough, optimizing the subset from the Equation (3) achieves nearly worst-case optimization. </em> 
+            </p>
+        </div>
+
+        
+        <h2 >
+            3. Practical Sampling with Stochastic Optimism.
+        </h2>
+        
+        <p class='text'>
+            The UCB acquisition rule used in MPTS requires multiple stochastic forward passes for each task's evaluation, and computations grow with $\hat{\mathcal{B}}$.
+It also demands calibration of exploration and exploitation weights in subset search.
+</p>
+        <p class='text'>
+            To cut off unnecessary computations and retain the uncertainty optimism, we adopt the posterior sampling strategy as the acquisition principle for RATS.
+            The reward or action value is treated as a randomized function, and each arm's value, sampled from the posterior once, serves action selection, i.e., $\mathcal{A}_{\text{P}}(\mathcal{T}^{\mathcal{B}})=\sum_{i=1}^{\mathcal{B}}\hat{\ell}_{t+1,i}$
+        </p>
+        <p class="text" style="margin-top: -30px;">
+            \[
+            \begin{equation}
+            \small{\text{One Forward Pass:}}\quad\bm z_{t}\sim q_{\bm\phi}(\bm z_{t}\vert H_{t})
+            \end{equation}
+            \]
+            \[
+            \begin{equation}
+            \hat{\ell}_{t+1,i}\sim p_{\bm\psi}(\ell\vert\hat{\bm\tau}_{i},\bm z_{t})\quad\forall i\in\{1,\dots,\hat{\mathcal{B}}\}
+            \end{equation}
+            \]
+            \[
+            \begin{equation}
+            \mathcal{T}_{t+1}^{\mathcal{B}*}=\arg\max_{\substack{\mathcal{T}^{\mathcal{B}}\subseteq\mathcal{T}^{\hat{\mathcal{B}}}\\|\mathcal{T}^{\mathcal{B}}|=\mathcal{B}}}\mathcal{A}_{\text{P}}(\mathcal{T}^{\mathcal{B}})+\gamma\mathcal{S}\left[\{d(\bm\tau_i,\bm\tau_j)\}\right]
+            \end{equation}
+            \]
+          </p>
+          
+        <h1 >
+            Contributions
+        </h1>
+        
+        <ul >
+            <li>
+                <p class="text">Our constructed i-MAB provides a versatile model to achieve RATS under various principles, including but not limited to MPTS and PDTS. The separate robustness concepts can be refined accordingly. 
+                </p>
+            </li>
+            <li>
+                <p class="text">The designed diversity regularized acquisition function fixes the concentration issue, allows for exploration in a wider range of task sets (e.g., $\hat{\mathcal{B}}=64\mathcal{B}$), and secures nearly worst-case MDP robustness.
+                </p>
+            </li>
+            <li>
+                <p class="text">The resulting PDTS is easy-to-implement and benefits from stochastic optimism in posterior sampling for decision-making.
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container blog main gray">
+        <img src="clarity/images/final_framework.png" style="width: 130%; margin-left: -13%;">
+        <p class="caption" style="width: 130%; margin-left: -13%;">
+            <b>PDTS as a RATS method.</b> PDTS treats task subsets as bandit arms, evaluates values through posterior sampling, and solves a regularized problem.
+        </p>
+    </div>
+
+    
+
+    <div class="container blog main" style="width: 50%; margin-left:-1%;">
+        <h1>Results</h1>
+        <p class="text">
+            PDTS exhibits adaptation robustness superior to existing SOTA baselines in typical DR and Meta-RL benchmarks without complicated configurations.
+Even in more realistic and challenging scenarios, such as vision-based decision-making, PDTS retains a remarkable performance over others.
+        </p>
+    </div>
+
+    <div class="container blog extra-large gray">
+        <div class="slide-menu">
+            <ul class="dots" id="slide-menu">
+                <li class="dot active"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+            </ul>
+        </div>
+       
+        <div class="slide-content", style="display: block;width: 80%; margin-left:10%;">
+            <div class="columns-1">
+                <img src="clarity/images/tasks.png">
+            </div>
+            <p class="caption">
+                Meta-RL continuous control scenarios based on MuJoCo: Reacher, Walker2d, and HalfCheetah. These include identifiers: target position, velocity, and mass.
+                Three DR scenarios: a game scenario, LunarLander, and two robotic arm control scenarios, Pusher and ErgoReacher.
+                We design two Visual DR scenarios: one randomizing lighting with a table-top two-finger gripper arm robot called LiftPegUpright_Light, and another randomizing goal locations with a quadruped robot called AnymalCReach_Goal.
+            </p>
+        </div>
+
+        <div class="slide-content", style="display: none;width: 80%; margin-left:10%;">
+            <div class="columns-1">
+                <img src="clarity/images/Meta RL_00.png">
+            </div>
+            <p class="caption">
+                <b>Meta-RL results.</b>The top depicts the cumulative return curves for $\text{CVaR}_{0.9}$ validation MDPs during meta-training; the middle shows the average cumulative returns curves during meta-training; and the bottom presents the meta-testing results with various $\alpha$.
+            </p>
+        </div>
+
+        <div class="slide-content", style="display: none;width: 80%; margin-left:10%;">
+            <div class="columns-1">
+                <img src="clarity/images/DR_00.png">
+            </div>
+            <p class="caption">
+                <b>Physical Robotics DR results.</b>(a) The top shows the cumulative return curves for $\text{CVaR}_{0.9}$ validation MDPs during training; the middle displays the average cumulative return curves across all validation MDPs during training; and the bottom presents the test results at various $\text{CVaR}_{\alpha}$. (b) We evaluate the trained policies in both in-distribution (ID) and out-of-distribution (OOD) domains on LunarLander, reporting the average returns for each sampled task.
+            </p>
+        </div>
+        <div class="slide-content", style="display: none;width: 80%; margin-left:10%;">
+            <div class="columns-1">
+                <img src="clarity/images/VDR_00.png">
+            </div>
+            <p class="caption">
+                <b>Visual Robotics DR results.</b>(a) Illustrations of two scenarios. (b) Curves of the average success ratio and the $\text{CVaR}_{0.5}$ success ratio on validation tasks during training. (c) Training curves of PCC values between predicted and true episode returns. (d) Memory cost and clock time relative to ERM during meta-training.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="container blog main" style="width: 50%; margin-left:-1%;">
+        <h1>Additional Analysis</h1>
+        
+        <ul >
+            <li>
+                <p class="text"><b>PDTS improves task efficiency in specific scenarios.</b> PDTS shows the potential to accelerate training in specific scenarios.
+                    In the Physical DR, PDTS achieves average returns comparable to ERM's best performance but with fewer training steps, achieving $2.4\times$ acceleration in Pusher and $1.3\times$ in LunarLander.
+                    </p>
+                <img src="clarity/images/acceleration.png" style="width: 80%;">
+            </li>
+            <li>
+                <p class="text">
+                    <b>PDTS achieves superior zero-shot policy adaptation in OOD MDPs.</b> 
+                    On Lundarlander, we evaluate zero-shot adaptation in OOD MDPs.
+                    PDTS exhibits the smallest performance degradation, particularly in the most challenging OOD tasks ($\bm{\tau} \in [1.0, 4.0)$).
+                    </p>
+                <img src="clarity/images/OOD.png" style="width: 80%;">
+            </li>
+            <li>
+                <p class="text"><b>PDTS is agnostic to the meta-learning backbone.</b> 
+                    PDTS is a plug-and-play module agnostic to the meta-learning backbone. We successfully integrate PDTS with PEARL,instead of just MAML.
+                </p>
+                <img src="clarity/images/backboneagnostic.png" style="width: 60%;">
+            </li>
+            <li>
+                <p class="text"><b>PDTS Can Discriminate Task Difficulties.</b> 
+                    PDTS inherits MDPs' difficulty scoring capability of MPTS, with both Pearson Correlation Coefficient values greater than $0.5$ in Visual DR results.
+In particular, PDTS exceeds MPTS in predicting accuracies.
+                </p>
+            </li>
+            <li>
+                <p class="text"><b>PDTS Offers Advantages at Minimal Cost.</b> 
+                    PDTS avoids additional evaluation costs associated with interaction and rendering.
+                    From relative clock time and memory usage in Visual DR results, we find PDTS retains computational efficiency with others except DRM.
+                </p>
+                <img src="clarity/images/cost_diff.png" style="width: 60%;">
+            </li>
+            <li>
+                <p class="text"><b>Beyond Decision-Making: Robust Supervised Meta-Learning.</b> 
+                    PDTS is readily extendable to other risk-averse scenarios, such as supervised meta-learning.
+                </p>
+                <img src="clarity/images/sinusoid_00.png" style="width: 70%;">
+                <p class="caption">
+                    <b>Few-Shot Sinusoid Regression Results</b>
+                    (a) Illustration of the sinusoid regression problem, where the task identifier $\bm\tau$ consists of the amplitude and phase $[a, b]$.  
+(b) Curves of averaged MSEs on the validation task set for all methods during meta-training.  
+(c) MSE values for all methods at various $\alpha$ levels of $\text{CVaR}_{\alpha}$ during meta-testing. 
+                </p>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="container blog main" style="width: 50%; margin-left:-1%;">
+        <h1>Citation</h1>
+        <p class="text">
+            If you find our works helpful, please consider citing:
+        </p>
+<pre><code class="plaintext">@article{wang2025beyond,
+    title={Beyond Any-Shot Adaptation: Predicting Optimization Outcome for Robustness Gains without Extra Pay},
+    author={Wang, Qi Cheems and Xiao, Zehao and Mao, Yixiu and Qu, Yun and Shen, Jiayi and Lv, Yiqin and Ji, Xiangyang},
+    journal={arXiv preprint arXiv:2501.11039},
+    year={2025}
+  }</code></pre>
+<pre><code class="plaintext">@article{wangmodel,
+    title={Model Predictive Task Sampling for Efficient and Robust Adaptation},
+    author={Wang, Qi Cheems and Xiao, Zehao and Mao, Yixiu and Qu, Yun and Ji, Jiayi Shen2 Yiqin Lv1 Xiangyang}
+  }</code></pre>
+    </div>
+
+    <!-- Footer Page -->
+    <footer>
+        <div class="container">
+            <p>
+                This website is built on the <a href="https://shikun.io/projects/clarity">Clarity Template</a>, designed by <a href="https://shikun.io/">Shikun Liu</a>.
+            </p>
+        </div>    
+    </footer>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="clarity/clarity.js"></script>    
+    <script src="assets/scripts/main.js"></script>    
+    </html>
+</body>
